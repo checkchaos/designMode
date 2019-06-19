@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fmc>
+    <c type="RULE_CHECK_SEQ" maxsize="10000" desc="规则校验信息缓存" clazz="com.asiainfo.tools.fixmemcache.impl.DefaultFMCCache">
+<!--
+        <getclazz>com.asiainfo.tools.fixmemcache.impl.OSDIGet</getclazz>
+-->
+        <policyclazz></policyclazz>
+        <lifecycleclazz>com.asiainfo.tools.fixmemcache.impl.SessionLifeCycle</lifecycleclazz>
+    </c>
+
+    <c type="PAGE_SEQ" maxsize="100000" desc="WEB实例中所有打开页面流水号" clazz="com.asiainfo.tools.fixmemcache.impl.DefaultFMCCache">
+        <hisclazz>com.asiainfo.tools.fixmemcache.impl.DefaultFMCHis</hisclazz>
+        <lifecycleclazz>com.asiainfo.tools.fixmemcache.impl.SessionLifeCycle</lifecycleclazz>
+    </c>
+
+    <c type="HTTPPROXY_RRDIRECT" maxsize="100000" desc="WEB实例中所有打开页面流水号" clazz="com.asiainfo.tools.fixmemcache.impl.DefaultFMCCache">
+        <hisclazz>com.asiainfo.tools.fixmemcache.impl.DefaultFMCHis</hisclazz>
+        <lifecycleclazz>com.asiainfo.tools.fixmemcache.impl.SessionLifeCycle</lifecycleclazz>
+    </c>
+
+</fmc>

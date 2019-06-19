@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<request>
+	<!-- 为Y时，系统将访问REDIS获取sessiondata-->
+	<session isRedisSession="N"></session>
+	<!-- 为Y时，系统将不使用OSDI功能-->
+	<osdi isRemove="N"></osdi>
+	<page>
+        <startwith>page</startwith>
+		<!-- 为N时，系统将不允许输入真实url路径访问AIConfig.xml配置外的任何文件 -->
+		<isallowurl>Y</isallowurl>
+		<!-- pageframe的配置页面是否开放 -->
+		<openconfig>Y</openconfig>
+        <!-- 子页面请求时是否根据cfg_page表中的配置检验和入口页面的关系 Y:校验，N不校验 -->
+        <ischecksubpage>N</ischecksubpage>
+        <!-- 是否允许直接访问服务，未打开入口页面直接访问服务 -->
+        <isdirectsrv>N</isdirectsrv>
+		<!-- 工程中可以访问的所有资源文件类型 <allfile>.html;.css;.js;.img;.jpg;.png;.tpl</allfile> -->
+		<!-- 用于显示的资源文件，显示的资源文件才会增加base头 <showfile>.html</showfile> -->
+		<!-- 需要权限控制的资源文件，该类型的文件都经过权限判断 -->
+		<authfile>.html;.tpl</authfile>
+        <!-- html是否缓存在内存中 -->
+        <iscache>N</iscache>
+        <!-- 服务与页面的鉴权关系自动插入cfg_func_compoent -->
+        <isautofunc>Y</isautofunc>
+        <!-- ExpiresFile客户端缓存文件类型 -->
+        <cachefile>.html;.png;.jpg;.gif;.css;.js;.tpl</cachefile>
+        <!-- 超时、退出后的跳转页面设置 oldhome/home-->
+        <backoldhome>Y</backoldhome>
+	</page>
+	<ftp>
+		<fileSize>10</fileSize>
+		<fileType>.doc;.docx;.pdf;.xls;.xlsx;.txt;.pptx;.ppt</fileType>
+	</ftp>
+	<export isNeedWaterMark="Y">
+		<!-- excel 样式配置 style为 "Arial","Times New Roman","Courier New","Tahoma" -->
+		<excel isNeedencrypt="Y">
+			<font style="Arial">19</font>
+		</excel>
+		<!-- pdf 样式配置 style为 "Arial","Times New Roman","Courier New","Tahoma" -->
+		<pdf>
+			<font style="">15</font>
+		</pdf>
+	</export>
+    <error>
+        <isshowtrace>Y</isshowtrace>
+    </error>
+    <httpproxy>
+       <proxy code="oldcrm">
+           <proxyhosts>
+               <proxyhost code="0">http://cscrm.array.yw.zj.chinamobile.com</proxyhost>
+               <proxyhost code="571">http://10.70.5.16:8080</proxyhost>
+               <proxyhost code="572">http://cscrm.array.yw.zj.chinamobile.com</proxyhost>
+               <proxyhost code="573">http://cscrm.array.yw.zj.chinamobile.com</proxyhost>
+               <proxyhost code="574">http://cscrm.array.yw.zj.chinamobile.com</proxyhost>
+               <proxyhost code="575">http://cscrm.array.yw.zj.chinamobile.com</proxyhost>
+               <proxyhost code="576">http://cscrm.array.yw.zj.chinamobile.com</proxyhost>
+               <proxyhost code="577">http://cscrm.array.yw.zj.chinamobile.com</proxyhost>
+               <proxyhost code="578">http://cscrm.array.yw.zj.chinamobile.com</proxyhost>
+               <proxyhost code="579">http://cscrm.array.yw.zj.chinamobile.com</proxyhost>
+               <proxyhost code="580">http://cscrm.array.yw.zj.chinamobile.com</proxyhost>
+               <proxyhost code="581">http://cscrm.array.yw.zj.chinamobile.com</proxyhost>
+           </proxyhosts>
+           <encoding>GBK</encoding>
+           <startwith>ADGallery,bankIcbc,bce,colorbox,crm,download,ext,images,jsv2,misc,secframe,webframe,workflow,business,listdatasourcequery,gridturnpage,crossgridaction,baseserver,dbformrefresh,dbtreerefresh,VerifyCodeLoginServlet,dbtreenewservlet,ServletUpload,vertifycodeservlet</startwith>
+       </proxy>
+        <proxy code="msg">
+            <proxyhosts>
+                <proxyhost code="0">http://imtong.yw.zj.chinamobile.com:8001</proxyhost>
+                <proxyhost code="571">http://imtong.yw.zj.chinamobile.com:8001</proxyhost>
+                <proxyhost code="572">http://imtong.yw.zj.chinamobile.com:8001</proxyhost>
+                <proxyhost code="573">http://imtong.yw.zj.chinamobile.com:8001</proxyhost>
+                <proxyhost code="574">http://imtong.yw.zj.chinamobile.com:8001</proxyhost>
+                <proxyhost code="575">http://imtong.yw.zj.chinamobile.com:8001</proxyhost>
+                <proxyhost code="576">http://imtong.yw.zj.chinamobile.com:8001</proxyhost>
+                <proxyhost code="577">http://imtong.yw.zj.chinamobile.com:8001</proxyhost>
+                <proxyhost code="578">http://imtong.yw.zj.chinamobile.com:8001</proxyhost>
+                <proxyhost code="579">http://imtong.yw.zj.chinamobile.com:8001</proxyhost>
+                <proxyhost code="580">http://imtong.yw.zj.chinamobile.com:8001</proxyhost>
+                <proxyhost code="581">http://imtong.yw.zj.chinamobile.com:8001</proxyhost>
+            </proxyhosts>
+            <encoding>GBK</encoding>
+            <startwith>http-bind</startwith>
+        </proxy>
+    </httpproxy>
+    <!--  
+	<sso isenable="true">
+		<isGrayRoute>N</isGrayRoute> 是否进行灰白路由 
+		<servername-portal>http://cscrmsso.yw.zj.chinamobile.com:30101/</servername-portal> crm sso 地址 
+		<servername-4asso>http://cs4asso.array.yw.zj.chinamobile.com</servername-4asso> 4A sso 地址 
+		<impl-classname>com.asiainfo.sso.SSOClientImpl</impl-classname>
+		<islog>false</islog> 是否记录日志 
+		<allowpath>ssoLoginDemo.html;login.jsp;lib/jquery/jquery.js;service</allowpath> 允许通过的路径 
+		<successGray-Home>http://gray.yw.zj.chinamobile.com:8080/pageframe/ssoLoginSuccess.html</successGray-Home> 灰色路由主页 
+		<success-home>http://wfscrm.yw.zj.chinamobile.com:8080/ssoLoginSuccess.html</success-home> sso登录成功后跳转到本系统的页面 
+	</sso>
+	-->
+</request>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!--<sqlfile>com/ailk/icrm/workflow/workflowsql.xml</sqlfile>
+	<sqlfile>com/ailk/tools/intframe/sql.xml</sqlfile>-->
+	<sqlgroup name="pageframe" dbid="pageframe">
+		<sql id="cfg_osdi_srv_base" dbid="">select * from cfg_osdi_srv_base where state=1</sql>
+		<sql id="cfg_osdi_srv_parameters" dbid="">select * from cfg_osdi_srv_parameters where state=1 order by par_id</sql>
+        <sql id="cfg_osdi_srv_rules" dbid="">select * from CFG_OSDI_RULE where 1=1 order by sort</sql>
+        <sql id="query_cfg_page" dbid="">select * from cfg_page where state=1</sql>
+        <sql id="query_cfg_page_byPageCode" dbid="">select * from cfg_page where page_code=:PAGE_CODE</sql>
+        <sql id="delete_cfg_page" dbid="">delete from cfg_page where page_code =:PAGE_CODE</sql>
+		<sql id="delete_srv_base" dbid="">delete from cfg_osdi_srv_base where srv_id= :SRV_ID </sql>
+		<sql id="delete_srv_parameters" dbid="">delete from cfg_osdi_srv_parameters where srv_id= :SRV_ID </sql>
+		<sql id="query_cfg_osdi_srv_event" dbid="">select * from cfg_osdi_srv_event where 1=1</sql>
+		<sql id="delete_cfg_osdi_srv_event" dbid="">delete from cfg_osdi_srv_event where srv_id= :SRV_ID</sql>
+		<sql id="query_service_by_packageId" dbid="">select a.*,(select count(0) from cfg_osdi_rule where srv_id=b.srv_id ) as rulecount from cfg_osdi_srv_base a inner join cfg_osdi_srv_base_package_rel b on b.srv_id = a.srv_id where a.state = 1 and b.state = 1 and b.package_id= :PACKAGE_ID</sql>
+		<sql id="delete_service_package_rel_by_packageId" dbid="">delete cfg_osdi_srv_base_package_rel where package_id= :PACKAGE_ID </sql>
+		<sql id="delete_service_package_by_packageId" dbid="">delete from cfg_osdi_srv_package where package_id= :PACKAGE_ID </sql>
+		<sql id="query_service_package_by_packageId" dbid="">select * from cfg_osdi_srv_package where package_id= :PACKAGE_ID </sql>
+		<sql id="delete_service_package_rel_by_srvId" dbid="">delete from cfg_osdi_srv_base_package_rel where srv_id= :SRV_ID </sql>
+		<sql id="query_service_rule_by_srvId" dbid="">select * from cfg_osdi_rule where srv_id= :SRV_ID</sql>
+		<sql id="delete_service_rule_by_srvId" dbid="">delete from cfg_osdi_rule where srv_id= :SRV_ID</sql>
+   		<sql id="ext_cfg_osdi_srv_base" dbid="">select * from cfg_osdi_srv_base where state=1</sql>
+		<sql id="ext_cfg_osdi_srv_parameters" dbid="">select * from cfg_osdi_srv_parameters where state=1</sql>
+        <sql id="ext_cfg_osdi_rule" dbid="">select * from CFG_OSDI_RULE where 1=1</sql>
+    	<sql id="ext_cfg_osdi_srv_event" dbid="">select * from cfg_osdi_srv_event where 1=1</sql>
+        <sql id="query_i18n_resource" dbid="">select * from cfg_i18n_resource where state = 'U'</sql>
+        <sql id="query_operator_login_record_by_code" dbid="">select * from operator_login_record where state = 1 and user_code=:USER_CODE</sql>
+
+        <sql id="insert_his_fmc_data" dbid="">insert into HIS_FMC_DATA(HOST_IP,INSTANCE_NAME,FMC_TYPE,DATA_KEY,DATA_VALUE) values( :HOSTIP , :INSTANCENAME , :FMCTYPE , :DATAKEY , :DATAVALUE )</sql>
+        <sql id="query_his_fmc_data" dbid="">select * from HIS_FMC_DATA where HOST_IP= :HOSTIP and INSTANCE_NAME= :INSTANCENAME and FMC_TYPE= :FMCTYPE and DATA_KEY= :DATAKEY  </sql>
+        <sql id="delete_his_fmc_data" dbid="">delete from HIS_FMC_DATA where HOST_IP= :HOSTIP and INSTANCE_NAME= :INSTANCENAME and FMC_TYPE= :FMCTYPE </sql>
+
+    </sqlgroup>
+</root>

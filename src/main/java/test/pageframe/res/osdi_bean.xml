@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans id="SESSION" desc="session中信息">
+	<bean id = "Operator0" class="com.asiainfo.pageframe.data.PhoneInfo" desc="客户信息">
+		<attr name="BILL_ID                            "           value="BILL_ID                            "      desc="" />  
+		<attr name="FAMILYNETUSER                      "           value="FAMILYNETUSER                      "      desc="" />  
+	    <attr name="ISLOCALCUST                        "           value="ISLOCALCUST                        "      desc="" />  
+	    <attr name="COUNTY_CODE                        "           value="BASEINFO.COUNTY_CODE               "      desc="" />  
+	    <attr name="COUNTY_NAME                        "           value="BASEINFO.COUNTY_NAME               "      desc="" />  
+	    <attr name="CUST_ID                            "           value="BASEINFO.CUST_ID                   "      desc="" />  
+	    <attr name="PROD_CATALOG                       "           value="BASEINFO.PROD_CATALOG              "      desc="" />  
+	    <attr name="CUST_STATUS                        "           value="BASEINFO.CUST_STATUS               "      desc="" />  
+	    <attr name="BALANCE                            "           value="BASEINFO.BALANCE                   "      desc="" />  
+	    <attr name="CARD_TYPE                          "           value="BASEINFO.CARD_TYPE                 "      desc="" />  
+	    <attr name="USER_ID                            "           value="BASEINFO.USER_ID                   "      desc="" />  
+	    <attr name="OS_STATUS                          "           value="BASEINFO.OS_STATUS                 "      desc="" />  
+	    <attr name="NET_AGE                            "           value="BASEINFO.NET_AGE                   "      desc="" />  
+	    <attr name="CUST_TYPE                          "           value="BASEINFO.CUST_TYPE                 "      desc="" />  
+	    <attr name="OS_STATUS_NAME                     "           value="BASEINFO.OS_STATUS_NAME            "      desc="" />  
+	    <attr name="CUST_NAME                          "           value="BASEINFO.CUST_NAME                 "      desc="" />  
+	    <attr name="OFFER_ID                           "           value="BASEINFO.OFFER_ID                  "      desc="" />  
+	    <attr name="OFFER_NAME                         "           value="BASEINFO.OFFER_NAME                "      desc="" />  
+	    <attr name="TRADEMARK                          "           value="BASEINFO.TRADEMARK                 "      desc="" />  
+	    <attr name="TRADEMARK_NAME                     "           value="BASEINFO.TRADEMARK_NAME            "      desc="" />  
+	    <attr name="REGION_CODE                        "           value="BASEINFO.REGION_CODE               "      desc="" />  
+	    <attr name="REGION_NAME                        "           value="BASEINFO.REGION_NAME               "      desc="" />  
+	    <attr name="USER_STATUS                        "           value="BASEINFO.USER_STATUS               "      desc="" />  
+	    <attr name="REAL_NAME_FLAG                     "           value="BASEINFO.REAL_NAME_FLAG            "      desc="" />  
+	    <attr name="REAL_NAME_FLAG_SHOW                "           value="BASEINFO.REAL_NAME_FLAG_SHOW       "      desc="" />  
+	    <!--虚拟网产品信息  -->
+	    <attr name="aVirtualProd.VIRTUALNETUSER_FLAG   "           value="VIRTUALNETUSER.VIRTUALNETUSER_FLAG    "      desc=""/>
+	    <attr name="aVirtualProd.ISVIRTUALNETUSER      "           value="VIRTUALNETUSER.ISVIRTUALNETUSER       "      desc=""/>
+	    <!--流量产品信息  -->
+	    <attr name="aDataProd.DATA_USAGE               "           value="DATA_USAGE.DATA_USAGE"  			desc=""/>
+	    <attr name="aDataProd.DATA_USAGE_SUB           "           value="DATA_USAGE.DATA_USAGE_SUB"        desc=""/>
+	</bean>
+	<!-- 短信认证信息 -->
+	<bean id = "Operator1" class="com.asiainfo.pageframe.data.PhoneInfo" desc="客户信息">
+		<attr name="aSmsVerifyInfo.sBillId              "           value="BillId          "              desc=""/>
+	    <attr name="aSmsVerifyInfo.sMenuCode            "           value="MenuCode        "              desc=""/>
+	    <attr name="aSmsVerifyInfo.sTempPwd             "           value="TempPwd         "              desc=""/>
+	    <attr name="aSmsVerifyInfo.sCurrentTime         "           value="CurrentTime     "              desc=""/>
+	    <attr name="aSmsVerifyInfo.serialNumber         "           value="erialNumber     "              desc=""/>
+	</bean>
+	<!-- 用户认证信息 -->
+	<bean id = "Operator2" class="com.asiainfo.pageframe.data.PhoneInfo" desc="客户信息">
+	    <attr name="aVerifyInfo.CERT_TYPE               "            value="CERT_TYPE               "     desc=""/>
+	    <attr name="aVerifyInfo.VERIFY_SHOW_NAME        "            value="VERIFY_SHOW_NAME        "     desc=""/>
+	    <attr name="aVerifyInfo.VERFY_RESULT            "            value="VERFY_RESULT            "     desc=""/>
+	</bean>
+
+</beans>

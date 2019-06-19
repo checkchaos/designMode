@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mapping>
+    <parse></parse>
+    <!-- 接口类、抽象类指定具体实现类，在报文转为为服务参数时使用 -->
+    <property interclazz="java.util.List" implclazz="java.util.ArrayList"/>
+    <property interclazz="java.util.Map" implclazz="java.util.HashMap"/>
+</mapping>

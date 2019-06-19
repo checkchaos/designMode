@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<services>
+  <!-- 服务配置，现在从数据库中获取，改文件不用。见requestlist.xml -->
+  <group id="LOCALSRV" desc="">
+		<service id="@OSDI_SERVICE_List_By_PackageId" group="localsrv" name="根据服务包ID配置服务列表" desc="根据服务包ID配置服务列表" clazz="com.asiainfo.pageframe.srv.interfaces.IOSDISV" method="queryServiceByPackageId" parclazz="net.sf.json.JSONArray"/>
+		<service id="@OSDI_SERVICE_Package_By_PackageId" group="localsrv" name="根据服务包ID配置服务列表" desc="根据服务包ID配置服务列表" clazz="com.asiainfo.pageframe.srv.interfaces.IOSDISV" method="queryServicePackageById" parclazz="net.sf.json.JSONArray"/>
+		<service id="@OSDI_SERVICE_PACKAGE_List" group="localsrv" name="获取服务包配置服务列表" desc="获取服务包配置服务列表" clazz="com.asiainfo.pageframe.srv.interfaces.IOSDISV" method="queryServicePackage" parclazz=""/>
+		<service id="@OSDI_SERVICE_RULE_By_Service_Code" group="localsrv" name="根据服务编码获取配置的规则信息" desc="根据服务编码获取配置的规则信息" clazz="com.asiainfo.pageframe.srv.interfaces.IOSDISV" method="queryServiceRuleByServiceCode" parclazz="net.sf.json.JSONArray"/>
+		<service id="@OSDI_SERVICE_RULE_Save" group="localsrv" name="保存服务规则" desc="保存服务规则" clazz="com.asiainfo.pageframe.srv.interfaces.IOSDISV" method="saveServiceRule" parclazz="net.sf.json.JSONArray"/>
+		<service id="@OSDI_SERVICE_PACKAGE_Delete" group="localsrv" name="删除服务包配置" desc="删除服务包配置" clazz="com.asiainfo.pageframe.srv.interfaces.IOSDISV" method="deleteServicePackage" parclazz="net.sf.json.JSONArray"/>
+		<service id="@OSDI_SERVICE_PACKAGE_Save" group="localsrv" name="保存服务包配置" desc="保存服务包配置" clazz="com.asiainfo.pageframe.srv.interfaces.IOSDISV" method="saveServicePackage" parclazz="net.sf.json.JSONArray"/>
+		<service id="@S_B_F_Delete" group="localsrv" name="删除服务配置服务" desc="删除服务配置服务" clazz="com.asiainfo.pageframe.srv.interfaces.IOSDISV" method="deleteService" parclazz="net.sf.json.JSONArray"/>
+		<service id="@S_B_F_Save" group="localsrv" name="保存服务配置服务" desc="保存服务配置服务" clazz="com.asiainfo.pageframe.srv.interfaces.IOSDISV" method="saveService" parclazz="net.sf.json.JSONArray"/>
+		<service id="@S_B_F_Update" group="localsrv" name="修改服务配置服务" desc="修改服务配置服务" clazz="com.asiainfo.pageframe.srv.interfaces.IOSDISV" method="updateService" parclazz="net.sf.json.JSONArray"/>
+		<service id="@S_B_F_Export" group="localsrv" name="导出服务配置sql文件" desc="导出服务配置sql文件" clazz="com.asiainfo.pageframe.srv.interfaces.IOSDISV" method="exportSQL2File" parclazz="net.sf.json.JSONArray"/>
+		<service id="@Page_Query" group="localsrv" name="页面查询服务" desc="页面查询服务" clazz="com.asiainfo.pageframe.srv.interfaces.IPageSV" method="getPageCfgs" parclazz=""/>
+		<service id="@Page_Save" group="localsrv" name="页面保存服务" desc="页面保存服务" clazz="com.asiainfo.pageframe.srv.interfaces.IPageSV" method="savePageCfg" parclazz="net.sf.json.JSONArray"/>
+		<service id="@Page_Delete" group="localsrv" name="页面删除服务" desc="页面保存服务" clazz="com.asiainfo.pageframe.srv.interfaces.IPageSV" method="deletePageCfg" parclazz="net.sf.json.JSONArray"/>
+  		<service id="@S_B_F_AutoUpdate" group="localsrv" name="自动修改服务配置服务" desc="自动修改服务配置服务" clazz="com.asiainfo.pageframe.srv.interfaces.IOSDISV" method="autoUpdateService" parclazz="net.sf.json.JSONArray"/>
+  </group>
+</services>

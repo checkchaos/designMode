@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<services>
+    <group id="COMMON_BUSINESS_SRV" desc="">
+        <service id="LOCAL_BUSI_OPERATOR_LOGIN" name="操作员登陆服务" desc="操作员登陆服务" clazz="com.asiainfo.pageframe.srv.local.interfaces.IOperatorLoginSV" method="login" parclazz="java.lang.String,java.lang.String">
+            <properties>
+                <property id="LI001" type="I" parentid="0" name="parameter0" aliasname="" clazz="java.lang.String" depend="" isbinary="0" isarray="0" isprimitive="0" isgeneric="0" classmodifier="0" isshow="1" value="" />
+                <property id="LI002" type="I" parentid="0" name="parameter1" aliasname="" clazz="java.lang.String" depend="" isbinary="0" isarray="0" isprimitive="0" isgeneric="0" classmodifier="0" isshow="1" value="" />
+                <property id="LO001" type="O" parentid="0" name="returnObj" aliasname="" clazz="com.ai.appframe2.privilege.UserInfoInterface" depend="" isbinary="0" isarray="0" isprimitive="0" isgeneric="0" classmodifier="1" isshow="1" value="" />
+                <property id="LO00101" type="O" parentid="LO001" name="sessionID" aliasname="" clazz="java.lang.String" depend="" isbinary="0" isarray="0" isprimitive="0" isgeneric="0" classmodifier="0" isshow="1" value="" />
+                <property id="LO00102" type="O" parentid="LO001" name="serialID" aliasname="" clazz="java.lang.String" depend="" isbinary="0" isarray="0" isprimitive="0" isgeneric="0" classmodifier="0" isshow="1" value="" />
+                <property id="LO00103" type="O" parentid="LO001" name="orgName" aliasname="" clazz="java.lang.String" depend="" isbinary="0" isarray="0" isprimitive="0" isgeneric="0" classmodifier="0" isshow="1" value="" />
+                <property id="LO00104" type="O" parentid="LO001" name="name" aliasname="" clazz="java.lang.String" depend="" isbinary="0" isarray="0" isprimitive="0" isgeneric="0" classmodifier="0" isshow="1" value="" />
+                <property id="LO00110" type="O" parentid="LO001" name="code" aliasname="" clazz="java.lang.String" depend="" isbinary="0" isarray="0" isprimitive="0" isgeneric="0" classmodifier="0" isshow="1" value="" />
+                <property id="LO00112" type="O" parentid="LO001" name="IP" aliasname="" clazz="java.lang.String" depend="" isbinary="0" isarray="0" isprimitive="0" isgeneric="0" classmodifier="0" isshow="1" value="" />
+                <property id="LO00105" type="O" parentid="LO001" name="orgId" aliasname="" clazz="long" depend="" isbinary="0" isarray="0" isprimitive="1" isgeneric="0" classmodifier="0" isshow="1" value="" />
+                <property id="LO00108" type="O" parentid="LO001" name="logID" aliasname="" clazz="long" depend="" isbinary="0" isarray="0" isprimitive="1" isgeneric="0" classmodifier="0" isshow="1" value="" />
+                <property id="LO00109" type="O" parentid="LO001" name="domainId" aliasname="" clazz="long" depend="" isbinary="0" isarray="0" isprimitive="1" isgeneric="0" classmodifier="0" isshow="1" value="" />
+                <property id="LO00113" type="O" parentid="LO001" name="ID" aliasname="" clazz="long" depend="" isbinary="0" isarray="0" isprimitive="1" isgeneric="0" classmodifier="0" isshow="1" value="" />
+                <property id="LO00106" type="O" parentid="LO001" name="multiLogin" aliasname="" clazz="boolean" depend="" isbinary="0" isarray="0" isprimitive="1" isgeneric="0" classmodifier="0" isshow="1" value="" />
+                <property id="LO00111" type="O" parentid="LO001" name="allowChPassword" aliasname="" clazz="boolean" depend="" isbinary="0" isarray="0" isprimitive="1" isgeneric="0" classmodifier="0" isshow="1" value="" />
+                <property id="LO00107" type="O" parentid="LO001" name="loginTime" aliasname="" clazz="java.sql.Timestamp" depend="" isbinary="0" isarray="0" isprimitive="1" isgeneric="0" classmodifier="0" isshow="1" value="" />
+            </properties>
+            <events>
+                <event clazz="com.asiainfo.pageframe.srv.event.OSDILoginReturnEvent" type="ReturnEvent"/>
+            </events>
+        </service>
+    </group>
+</services>

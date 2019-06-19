@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<services>
+    <group id="REQUEST_CHANNEL" desc="">
+        <service id="requestchannel" desc="">
+            <beforetasks>
+                <beforetask sort="1" task="com.asiainfo.pageframe.srv.channel.URLSecurityCheck" desc="检查URL是否合法" />
+
+                <beforetask sort="1.1" task="com.asiainfo.pageframe.srv.channel.HttpProxy" desc="他系统资源代理" />
+                <beforetask sort="1.2" task="com.asiainfo.pageframe.srv.channel.ExpiresFile" desc="判断是否客户端缓存文件,在AIConfig.xml中配置"/>
+                <beforetask sort="1.3" task="com.asiainfo.pageframe.srv.channel.URLPathCheck" desc="检查请求的URL是否允许不登陆状态访问" />
+
+                <!--
+                   <beforetask sort="3" task="com.asiainfo.pageframe.srv.channel.ETagCheck" desc="检查请求资源是否缓存" />
+                -->
+
+                <beforetask sort="4" task="com.asiainfo.pageframe.srv.channel.GetClientInfo" desc="终端信息采集" />
+                <beforetask sort="5" task="com.asiainfo.pageframe.srv.channel.SetBusiSeq" desc="设置业务流水号" />
+
+                <beforetask sort="7" task="com.asiainfo.pageframe.srv.channel.SsoChannel" desc="单点登录支持" />
+                <beforetask sort="8" task="com.asiainfo.pageframe.srv.channel.LoginCheck" desc="登陆校验" />
+
+                <beforetask sort="9" task="com.asiainfo.pageframe.srv.channel.RequestTypeJudge" desc="请求类型判断" />
+
+                <beforetask sort="10" task="com.asiainfo.pageframe.srv.channel.GrayRoute" desc="灰白路由跳转" />
+
+                <beforetask sort="11" task="com.asiainfo.pageframe.srv.channel.ParameterCheck" desc="接入公共参数校验" />
+
+
+                <beforetask sort="100" task="com.asiainfo.pageframe.srv.channel.WebTraceTask" desc="WEB TRACE BEFORE" />
+            </beforetasks>
+            <servicetasks>
+                <servicetask sort="5" task="com.asiainfo.pageframe.srv.channel.RequestSubChannel" desc="请求类型跳转" />
+            </servicetasks>
+
+
+            <errortasks>
+                <errortask sort="1" task="com.asiainfo.pageframe.srv.channel.ErrorTask" desc="异常处理"/>
+            </errortasks>
+            <aftertasks>
+                <aftertask sort="1" task="com.asiainfo.pageframe.srv.channel.DataFilter" desc="数据过滤"/>
+                <aftertask sort="2" task="com.asiainfo.pageframe.srv.channel.SrvCacheRefresh" desc="服务保存或修改后刷新本地缓存"/>
+                <aftertask sort="3" task="com.asiainfo.pageframe.srv.channel.LogCenter" desc="日志中心日志"/>
+                <aftertask sort="4" task="com.asiainfo.pageframe.srv.channel.BusiLog" desc="业务日志"/>
+                <aftertask sort="5" task="com.asiainfo.pageframe.srv.channel.DataFormate" desc="数据格式化"/>
+
+                <aftertask sort="100" task="com.asiainfo.pageframe.srv.channel.WebTraceAfterTask" desc="WEB TRACE AFTER" />
+            </aftertasks>
+
+        </service>
+        <service id="pagechannel" desc="">
+            <servicetasks>
+
+                <servicetask sort="1" task="com.asiainfo.pageframe.srv.channel.PageAuthCheck" desc="页面鉴权" />
+
+                <servicetask sort="2" task="com.asiainfo.pageframe.srv.channel.PageMatch" desc="页面适配" />
+            </servicetasks>
+
+            <errortasks>
+                <errortask sort="1" task="com.asiainfo.pageframe.srv.channel.ErrorTask" desc="异常处理"/>
+            </errortasks>
+
+        </service>
+        <service id="actionchannel" desc="">
+            <servicetasks>
+
+                <servicetask sort="1" task="com.asiainfo.pageframe.srv.channel.ActionAuthCheck" desc="Action鉴权" />
+
+                <servicetask sort="2" task="com.asiainfo.pageframe.srv.channel.ParameterChange" desc="服务参数转换" />
+                <servicetask sort="3" task="com.asiainfo.pageframe.srv.channel.InvokeService" desc="服务调用" />
+            </servicetasks>
+
+            <errortasks>
+                <errortask sort="1" task="com.asiainfo.pageframe.srv.channel.ErrorTask" desc="异常处理"/>
+            </errortasks>
+
+        </service>
+        
+        <service id="ioFilechannel" desc="">
+            <servicetasks>
+                <servicetask sort="3" task="com.asiainfo.pageframe.srv.channel.IoFileService" desc="文件上传" />
+            </servicetasks>
+
+            <errortasks>
+                <errortask sort="1" task="com.asiainfo.pageframe.srv.channel.ErrorTask" desc="异常处理"/>
+            </errortasks>
+
+        </service>
+        
+        
+        <service id="ftpchannel" desc="">
+            <servicetasks>
+                <servicetask sort="1" task="com.asiainfo.pageframe.srv.channel.FtpAuthCheck" desc="ftp鉴权" />
+                <servicetask sort="2" task="com.asiainfo.pageframe.srv.channel.DoFtp" desc="ftp文件操作" />
+            </servicetasks>
+        </service>
+        <service id="requestreturn" desc="请求返回管道">
+            <servicetasks>
+<!--
+                <servicetask sort="2.1" task="com.asiainfo.pageframe.srv.channel.ETagSetting" desc=""/>
+-->
+            </servicetasks>
+        </service>
+    </group>
+
+    <group id="LOCAL_SRVS">
+       <service id="@PageClose" desc="页面关闭时调用,关闭内存中的资源">
+        <servicetasks>
+            <servicetask sort="1" task="com.asiainfo.pageframe.srv.local.PageClose" desc="服务参数转换" />
+        </servicetasks>
+    </service>
+        <service id="@OPLoginout" desc="操作员退出,关闭内存中的资源">
+            <servicetasks>
+                <servicetask sort="1" task="com.asiainfo.pageframe.srv.local.OPLoginout" desc="服务参数转换" />
+            </servicetasks>
+        </service>
+        <service id="@PhoneLoginout" desc="用户退出,关闭内存中的资源">
+            <servicetasks>
+                <servicetask sort="1" task="com.asiainfo.pageframe.srv.local.PhoneLoginout" desc="服务参数转换" />
+            </servicetasks>
+        </service>
+       	<service id="@PhoneChange" desc="前端主动触发用户切换,替换当前用户">
+            <servicetasks>
+                <servicetask sort="1" task="com.asiainfo.pageframe.srv.local.PhoneChange" desc="用户切换" />
+            </servicetasks>
+        </service>
+        <service id="@ClearVerify" desc="清除认证,关闭内存中的资源">
+            <servicetasks>
+                <servicetask sort="1" task="com.asiainfo.pageframe.srv.local.ClearVerify" desc="服务参数转换" />
+            </servicetasks>
+        </service>
+        <service id="@ParseSubPage" desc="解析入口页面中子页面">
+            <servicetasks>
+                <servicetask sort="1" task="com.asiainfo.pageframe.srv.local.ParseSubPage" desc="直接解析" />
+            </servicetasks>
+        </service>
+        <service id="@ParseSubService" desc="解析入口页面中服务编码">
+            <servicetasks>
+                <servicetask sort="1" task="com.asiainfo.pageframe.srv.local.ParseSubService" desc="直接解析" />
+            </servicetasks>
+        </service>
+        <service id="@SsoLoginService" desc="单点登录服务">
+            <servicetasks>
+                <servicetask sort="1" task="com.asiainfo.pageframe.srv.local.SsoLoginService" desc="直接解析" />
+            </servicetasks>
+        </service>
+        <service id="@SsoLogoutService" desc="单点登出服务">
+            <servicetasks>
+                <servicetask sort="1" task="com.asiainfo.pageframe.srv.local.SsoLogoutService" desc="直接解析" />
+            </servicetasks>
+        </service>
+    </group>
+</services>

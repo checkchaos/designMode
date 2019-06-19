@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<logs>
+    <log id="chainlog" memmaxcount="3000" memsecond="300" suffix="log" runningpath="c:/logs/running" hispath="c:/logs/his" filename="CHAINLOG" pattern="'.'yyyyMMddHH" remaintime="240" splittime="3"/>
+    <log id="weblog" memmaxcount="3000" memsecond="300" suffix="log" runningpath="c:/logs/running" hispath="c:/logs/his" filename="WEBLOG" pattern="'.'yyyyMMddHH" remaintime="240" splittime="3"/>
+    <log id="esbinvokelog" memmaxcount="3000" memsecond="300" suffix="log" runningpath="c:/logs/running" hispath="c:/logs/his" filename="ESBINVOKELOG" pattern="'.'yyyyMMddHH" remaintime="240" splittime="3"/>
+</logs>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<osdi>
+    <!-- 输入、输出参数格式转换 -->
+    <dataformate>com.asiainfo.pageframe.data.JSONDataConvert</dataformate>
+    <!-- 报文中日期格式 -->
+    <datepattern>yyyy-MM-dd HH:mm:ss</datepattern>
+    <!-- 类.方法搜索时，对类名称的过滤 -->
+    <searchfilter clazz="com.asiainfo.pageframe.data.SVClassFilter">
+        <pattern>.I*SV.class</pattern>
+    </searchfilter>
+    <!-- 获取web上下文数据对象的属性 -->
+    <contextdata>com.asiainfo.pageframe.data.DefaultValue</contextdata>
+    <!-- 服务超时机制调用时需要传递的线程变量配置 -->
+    <threadobj>
+        <obj clazz="com.ai.appframe2.common.SessionManager" get="getUser" set="setUser"/>
+    </threadobj>
+    <!-- 属性的扩展属性 -->
+    <extproperty>
+        <property></property>
+    </extproperty>
+    <!-- 默认规则处理类 -->
+    <rulecheck clazz="com.asiainfo.pageframe.srv.event.OSDIDefaultRuleCheckEvent">
+        <rulesrvcode>TestRule_R3</rulesrvcode>
+    </rulecheck>
+    <!-- 属性值格式检查类型 -->
+    <propertycheck>
+        <pattern clazz="com.asiainfo.tools.osdi.check.property.BillIdCheck" desc="手机号码格式检查"/>
+    </propertycheck>
+
+</osdi>

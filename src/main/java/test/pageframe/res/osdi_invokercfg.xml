@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<invokers>
+    <!-- 根据服务分组、类路径匹配服务调用器，目前都是用OSDIInvoker -->
+    <invoker clazz="com.asiainfo.pageframe.srv.OSDIInvoker">
+        <srvgroup id="">
+            <srvpath></srvpath>
+        </srvgroup>
+    </invoker>
+</invokers>
