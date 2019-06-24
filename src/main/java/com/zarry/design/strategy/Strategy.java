@@ -1,7 +1,7 @@
 package com.zarry.design.strategy;
 
 /**
- * 策略模式：当接口中存在多个条件语句形式出现，选择策略模式，将每种不同算法进行封装，
+ * 策略模式：将每种不同算法进行封装，隔离算法实现和调用
  */
 public class Strategy {
     public static void main(String[] args) {
